@@ -980,7 +980,7 @@ var Observable = /*@__PURE__*/ (function () {
  */
 function getPromiseCtor(promiseCtor) {
     if (!promiseCtor) {
-        promiseCtor = Promise;
+        promiseCtor = config.Promise || Promise;
     }
     if (!promiseCtor) {
         throw new Error('no Promise impl found');
