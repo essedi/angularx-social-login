@@ -63,13 +63,12 @@ export class GoogleLoginProvider extends BaseLoginProvider {
     signIn(opt) {
         return new Promise((resolve, reject) => {
             this.onReady().then(() => {
-                let /** @type {?} */ promise = this.auth2.signIn(opt);
+                let /** @type {?} */ promise = this.auth2.grantOfflineAccess(opt);
                 promise.then(() => {
                     let /** @type {?} */ user = new SocialUser();
                     let /** @type {?} */ profile = this.auth2.currentUser.get().getBasicProfile();
                     let /** @type {?} */ token = this.auth2.currentUser.get().getAuthResponse(true).access_token;
                     let /** @type {?} */ backendToken = this.auth2.currentUser.get().getAuthResponse(true).id_token;
-                    this.auth2.currentUser.grantOfflineAccess(opt);
                     user.id = profile.getId();
                     user.name = profile.getName();
                     user.email = profile.getEmail();

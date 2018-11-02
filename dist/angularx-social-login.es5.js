@@ -9432,13 +9432,12 @@ var GoogleLoginProvider = /** @class */ (function (_super) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             _this.onReady().then(function () {
-                var /** @type {?} */ promise = _this.auth2.signIn(opt);
+                var /** @type {?} */ promise = _this.auth2.grantOfflineAccess(opt);
                 promise.then(function () {
                     var /** @type {?} */ user = new SocialUser();
                     var /** @type {?} */ profile = _this.auth2.currentUser.get().getBasicProfile();
                     var /** @type {?} */ token = _this.auth2.currentUser.get().getAuthResponse(true).access_token;
                     var /** @type {?} */ backendToken = _this.auth2.currentUser.get().getAuthResponse(true).id_token;
-                    _this.auth2.currentUser.grantOfflineAccess(opt);
                     user.id = profile.getId();
                     user.name = profile.getName();
                     user.email = profile.getEmail();
