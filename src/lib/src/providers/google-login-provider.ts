@@ -60,7 +60,7 @@ export class GoogleLoginProvider extends BaseLoginProvider {
   signIn(opt?: LoginOpt): Promise<SocialUser> {
     return new Promise((resolve, reject) => {
       this.onReady().then(() => {
-        let promise = this.auth2.signIn(opt);
+        let promise = this.auth2.grantOfflineAccess(opt);
 
         promise.then(() => {
           let user: SocialUser = new SocialUser();
