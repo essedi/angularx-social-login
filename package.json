@@ -1,10 +1,10 @@
 {
-  "name": "angularx-social-login",
+  "name": "essedi-angularx-social-login",
   "version": "1.2.3",
   "description": "Social login and authentication module for Angular 4 / 5. Supports authentication with Google and Facebook. Can be extended to other providers also.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abacritt/angularx-social-login"
+    "url": "https://github.com/essedi/angularx-social-login.git"
   },
   "author": {
     "name": "Jaibatrik Dutta",
